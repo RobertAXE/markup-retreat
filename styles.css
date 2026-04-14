@@ -1,1 +1,34 @@
-/* Пиши стили тут */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.star-rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+
+.star {
+  font-size: 60px;
+  cursor: pointer;
+  color: #ffffff;
+  -webkit-text-stroke: 2px #000000;
+  padding: 0 5px;
+  transition: color 0.2s ease-in-out;
+}
+
+.star:hover,
+.star:hover ~ .star {
+  color: #ffd700;
+}
