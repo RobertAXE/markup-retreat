@@ -28,7 +28,10 @@ body {
   transition: color 0.2s ease-in-out;
 }
 
-.star:hover,
-.star:hover ~ .star {
+.star.active {
+  color: #ffd700;
+}
+
+.star.hover {
   color: #ffd700;
 }
