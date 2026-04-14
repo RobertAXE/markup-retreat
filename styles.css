@@ -16,10 +16,11 @@ body {
 
 .star-rating {
   display: inline-flex;
-  flex-direction: row-reverse;
 }
 
 .star {
+  border: 0;
+  background: transparent;
   font-size: 60px;
   cursor: pointer;
   color: #ffffff;
@@ -28,10 +29,11 @@ body {
   transition: color 0.2s ease-in-out;
 }
 
-.star.active {
+.star.is-active {
   color: #ffd700;
 }
 
-.star.hover {
-  color: #ffd700;
+.star:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 4px;
 }

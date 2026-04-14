@@ -7,12 +7,26 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="star-rating">
-      <span class="star" data-value="5">★</span>
-      <span class="star" data-value="4">★</span>
-      <span class="star" data-value="3">★</span>
-      <span class="star" data-value="2">★</span>
-      <span class="star" data-value="1">★</span>
+    <div class="star-rating" aria-label="Rating">
+      <button class="star" type="button" data-value="1" aria-label="1 out of 5">★</button>
+      <button class="star" type="button" data-value="2" aria-label="2 out of 5">★</button>
+      <button class="star" type="button" data-value="3" aria-label="3 out of 5">★</button>
+      <button class="star" type="button" data-value="4" aria-label="4 out of 5">★</button>
+      <button class="star" type="button" data-value="5" aria-label="5 out of 5">★</button>
     </div>
+
+    <script>
+      const stars = document.querySelectorAll(".star");
+
+      stars.forEach((star) => {
+        star.addEventListener("click", () => {
+          const rating = Number(star.dataset.value);
+
+          stars.forEach((item) => {
+            item.classList.toggle("is-active", Number(item.dataset.value) <= rating);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
